@@ -1,0 +1,47 @@
+* {
+  font-family: 'Press Start 2P', cursive;
+}
+body {
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 960px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
+
+  background-color: #f2fdff;
+}
+section {
+  margin: 5rem 0;
+}
+input {
+  outline: 0;
+}
+
+.nes-container {
+  background: #fff;
+}
+
+#sorting-list-container .nes-list {
+  text-align: left;
+}
+#sorting-list-container li::before {
+  color: #fff;
+}
+
+#countdown-container .nes-balloon::before,
+#countdown-container .nes-balloon::after {
+  left: 20rem;
+}
+#countdown-container .nes-table {
+  margin: 4px auto;
+}
+
+#form-validation-container .nes-list {
+  text-align: left;
+}
