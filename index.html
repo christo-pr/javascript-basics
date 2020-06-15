@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript Basics Examples</title>
+
+  <!-- Ness css -->
+  <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <h1>Javascript Basics</h1>
+
+  <!-- Progress bar -->
+  <section class="nes-container with-title" id="progress-bar-container">
+    <h3 class="title">Progress Bar</h3>
+    <p class="nes-text is-primary">Click the <b><i>"start"</i></b> button and check the progress</p>
+    <hr>
+    <br>
+    <progress class="nes-progress is-pattern" value="0" max="100"></progress>
+    <button type="button" class="nes-btn is-success" id="progress-btn">Start</button>
+  </section>
+
+  <!-- Sorting list -->
+  <section class="nes-container is-dark with-title" id="sorting-list-container">
+    <h3 class="title">Sorting list</h3>
+
+    <p class="nes-text is-disabled">Click on the <b><i>"sort"</i></b> button to automatically sort the elements</p>
+    <p class="nes-text is-disabled">Click on the <b><i>"add"</i></b> button to add new elements</p>
+    <hr>
+    <br>
+
+    <div class="nes-field is-inline">
+      <input type="text" id="new-item-input" class="nes-input is-dark" placeholder="New item...">
+      <button type="button" class="nes-btn" id="add-item">Add</button>
+    </div>
+    <br>
+    <br>
+
+    <div class="lists">
+      <ul class="nes-list is-circle">
+        <li>House</li>
+        <li>Dog</li>
+        <li>Airplane</li>
+        <li>Computer</li>
+      </ul>
+    </div>
+
+    <button type="button" class="nes-btn is-primary" id="sort-item">Sort</button>
+  </section>
+
+  <!-- Count Down -->
+  <section class="nes-container with-title" id="countdown-container">
+    <h3 class="title">Count down timer</h3>
+
+    <section class="message-list">
+
+      <section class="message -right">
+        <div class="nes-balloon from-right">
+          <p>What you do in New Year Eve? Fireworks? Great! Look how many days are left for that great party:</p>
+
+          <br>
+          <br>
+
+          <div class="nes-table-responsive">
+            <table class="nes-table is-bordered is-centered coundown-clock">
+              <tbody>
+                <tr>
+                  <td class="days">
+                    <span>55</span>
+                    Days
+                  </td>
+                  <td class="hours">
+                    <span>29</span>
+                    Hours
+                  </td>
+                  <td class="min">
+                    <span>30</span>
+                    Minutes
+                  </td>
+                  <td class="sec">
+                    <span>55</span>
+                    Seconds
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <i class="nes-bcrikko"></i>
+      </section>
+    </section>
+  </section>
+
+  <!-- Form validation -->
+  <section class="nes-container is-dark with-title" id="form-validation-container">
+    <h3 class="title">Form validation</h3>
+    <p class="nes-text">Type a secure password</p>
+    <hr>
+    <br>
+    <br>
+    <div class="nes-field">
+      <label for="name_field">Password</label>
+      <input type="password" class="nes-input is-dark is-error" placeholder="Type your password">
+    </div>
+    <br>
+    <br>
+    <div class="lists">
+      <ul class="nes-list is-disc">
+        <li>
+          <i class="nes-icon is-small star is-empty"></i> Start with a letter
+        </li>
+        <li>
+          <i class="nes-icon is-small star is-empty"></i> At least one number
+        </li>
+        <li>
+          <i class="nes-icon is-small star is-empty"></i> More than 10 characters
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
