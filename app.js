@@ -80,6 +80,12 @@ function sortingList() {
   })
 }
 
+/**
+ * Get the future date
+ * inside an interval running each second
+ * calculate the today date
+ * and start making the calculations
+ */
 function countDown() {
   var newYear = new Date(2021, 0, 1, 0, 0, 0)
 
@@ -117,8 +123,68 @@ function countDown() {
   }, 1000)
 }
 
+/**
+ * Listen the input keyup event
+ * Validate the current value
+ * against the 3 rules (we use RegExp)
+ * show validations
+ */
+function formValidation() {
+  var input = $("#form-validation-container input")
+  var stars = $('#form-validation-container ul > li > i', true)
+
+  input.addEventListener('keyup', function(e) {
+    var value = e.target.value
+
+    if (value.length === 0) {
+      input.classList.add('is-error')
+      stars.forEach(function(st) {
+        st.classList.add('is-empty')
+      })
+    } else {
+      input.classList.remove('is-error')
+
+      // Validate letter
+      var isFirstLetter = /[A-Za-z]/.test(value[0])
+      // at least one number
+      var hasOneNumber = /[0-9]/.test(value)
+      // 10 chars min length
+      var minLength = value.length >= 10
+
+      // Indivual checks
+      if (isFirstLetter) {
+        stars[0].classList.remove('is-empty')
+      } else {
+        stars[0].classList.add('is-empty')
+      }
+
+      if (hasOneNumber) {
+        stars[1].classList.remove('is-empty')
+      } else {
+        stars[1].classList.add('is-empty')
+      }
+
+      if (minLength) {
+        stars[2].classList.remove('is-empty')
+      } else {
+        stars[2].classList.add('is-empty')
+      }
+
+      // Mark input as valid if everything is ok
+      if (isFirstLetter && hasOneNumber && minLength) {
+        input.classList.add('is-success')
+      } else {
+        input.classList.remove('is-success')
+      }
+
+    }
+
+  })
+}
+
 
 // Call the functions
 progressBar()
 sortingList()
 countDown()
+formValidation()
