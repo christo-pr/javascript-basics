@@ -80,7 +80,45 @@ function sortingList() {
   })
 }
 
+function countDown() {
+  var newYear = new Date(2021, 0, 1, 0, 0, 0)
+
+  setInterval(function () {
+    var now = new Date()
+    var difference = newYear.getTime() - now.getTime()
+
+    // milis
+    var milis = difference / 1000;
+
+    // seconds
+    var seconds = Math.floor(milis % 60)
+    milis /= 60 // Update the time for next calculation
+
+    // minutes
+    var minutes = Math.floor(milis % 60)
+    milis /= 60 // Update the time for next calculation
+
+    // hours
+    var hours = Math.floor(milis % 24)
+    // days
+    var days = Math.floor(milis / 24)
+
+    // Get the elements
+    var daysSpan = $('.coundown-clock .days > span')
+    var hoursSpan = $('.coundown-clock .hours > span')
+    var minSpan = $('.coundown-clock .min > span')
+    var secSpan = $('.coundown-clock .sec > span')
+
+    daysSpan.textContent = days
+    hoursSpan.textContent = hours
+    minSpan.textContent = minutes
+    secSpan.textContent = seconds
+
+  }, 1000)
+}
+
 
 // Call the functions
 progressBar()
 sortingList()
+countDown()
